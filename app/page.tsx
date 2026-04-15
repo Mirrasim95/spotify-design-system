@@ -1,11 +1,7 @@
-"use client";
-
-import { Sidebar } from "@/components/Sidebar";
-
 export default function Home() {
   return (
-    <div className="flex h-screen">
-      <Sidebar />
+    <div>
+      <h1>🏠 Home</h1>
     </div>
   );
 }
