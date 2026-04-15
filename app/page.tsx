@@ -1,5 +1,11 @@
-import Image from "next/image";
+"use client";
+
+import { Sidebar } from "@/components/Sidebar";
 
 export default function Home() {
-  return <div>Spotify</div>;
+  return (
+    <div className="flex h-screen">
+      <Sidebar />
+    </div>
+  );
 }
