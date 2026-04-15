@@ -14,7 +14,7 @@ const nav = [
 export const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <aside className="border-r border-gray-500 bg-black flex flex-col h-100vh w-xs gap-4 px-16 py-8">
+    <aside className="border-r border-gray-500 bg-gray-900 flex flex-col h-100vh w-xs gap-4 px-16 py-8">
       <Link href={"/"}>
         <Image
           src="./spotify-logo.svg"
