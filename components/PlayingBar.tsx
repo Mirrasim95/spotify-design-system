@@ -32,7 +32,10 @@ export default function PlayingBar() {
         <div className="flex-1 items-center"></div>
         <div className="flex-1 flex-col items-center justify-center">
           <div className="flex items-center justify-center gap-5">
-            <button onClick={() => setIsActive((prev) => !prev)}>
+            <button
+              onClick={() => setIsActive((prev) => !prev)}
+              className="transition duration-200 active:scale-80 "
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -53,7 +56,10 @@ export default function PlayingBar() {
               </svg>
             </button>
 
-            <button onClick={() => setProgress((prev) => (prev = 0))}>
+            <button
+              onClick={() => setProgress((prev) => (prev = 0))}
+              className="transition duration-200 active:scale-80 "
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -111,7 +117,10 @@ export default function PlayingBar() {
               )}
             </button>
 
-            <button onClick={() => setProgress((prev) => (prev = 0))}>
+            <button
+              onClick={() => setProgress((prev) => (prev = 0))}
+              className="transition duration-200 active:scale-80 "
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -131,7 +140,7 @@ export default function PlayingBar() {
 
             <button
               onClick={() => setIsRepead((prev) => !prev)}
-              className="hover:text-white"
+              className="hover:text-white transition duration-200 active:scale-80 "
             >
               {isRepeat ? (
                 <svg
@@ -192,7 +201,7 @@ export default function PlayingBar() {
           <div className="flex-1 flex items-center gap-3 justify-center">
             <button
               onClick={() => setIsMute((prev) => !prev)}
-              className="hover:text-white "
+              className="hover:text-white transition duration-200 active:scale-80 "
             >
               {isMute ? (
                 <svg
