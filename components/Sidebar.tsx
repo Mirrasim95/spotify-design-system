@@ -14,26 +14,28 @@ const nav = [
 export const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <aside className="border-r border-gray-500 bg-gray-900 flex flex-col h-100vh w-xs gap-4 px-16 py-8">
-      <Link href={"/"}>
+    <aside className="bg-gray-900 ">
+      <Link href={"/"} className="pl-10">
         <Image
           src="./spotify-logo.svg"
-          width={200}
-          height={200}
+          width={150}
+          height={50}
           alt="Spotify logo"
-          className="mb-10 -ml-6"
+          className="mb-20 m-10"
         />
       </Link>
-      {nav.map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          className="text-gray-100 text-xl"
-        >
-          <span className="pr-5">{item.label}</span>
-          {item.text}
-        </Link>
-      ))}
+      <div className="bg-gray-900 flex flex-col h-screen w-64 shrink-0 gap-6 pl-15 ">
+        {nav.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="flex items-center gap-2 text-gray-300 hover:text-white transition w-fit "
+          >
+            <span>{item.label}</span>
+            <span>{item.text}</span>
+          </Link>
+        ))}
+      </div>
     </aside>
   );
 };
