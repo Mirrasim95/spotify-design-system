@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function PlayingBar() {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -29,7 +30,24 @@ export default function PlayingBar() {
   return (
     <div>
       <div className="flex items-center justify-between fixed bottom-0 left-0 w-full h-25 bg-black text-gray-400 ">
-        <div className="flex-1 items-center"></div>
+        <div className="flex-1 items-center justify-center flex gap-5">
+          <div>
+            <Image
+              src={"/album-cover.jpg"}
+              width={70}
+              height={80}
+              alt="album cover"
+            />
+          </div>
+          <div>
+            <p className="text-gray-200 hover:underline cursor-pointer">
+              Trinti Productions
+            </p>
+            <p className="text-gray-500 text-sm hover:underline cursor-pointer">
+              Paradice
+            </p>
+          </div>
+        </div>
         <div className="flex-1 flex-col items-center justify-center">
           <div className="flex items-center justify-center gap-5">
             <button
@@ -57,7 +75,7 @@ export default function PlayingBar() {
             </button>
 
             <button
-              onClick={() => setProgress((prev) => (prev = 0))}
+              onClick={() => setProgress((prev) => prev * 0)}
               className="transition duration-200 active:scale-80 "
             >
               <svg
@@ -118,7 +136,7 @@ export default function PlayingBar() {
             </button>
 
             <button
-              onClick={() => setProgress((prev) => (prev = 0))}
+              onClick={() => setProgress((prev) => prev * 0)}
               className="transition duration-200 active:scale-80 "
             >
               <svg
