@@ -48,7 +48,7 @@ export default function PlayingBar() {
             </p>
           </div>
         </div>
-        <div className="flex-1 flex-col items-center justify-center">
+        <div className="flex-1 flex flex-col gap-2 ">
           <div className="flex items-center justify-center gap-5">
             <button
               onClick={() => setIsActive((prev) => !prev)}
@@ -64,7 +64,7 @@ export default function PlayingBar() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className={isActive ? "text-white" : "hover:text-white"}
+                className={isActive ? " text-green-400" : "hover:text-white"}
               >
                 <path d="m18 14 4 4-4 4" />
                 <path d="m18 2 4 4-4 4" />
@@ -149,7 +149,7 @@ export default function PlayingBar() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="lucide lucide-skip-forward-icon lucide-skip-forward hover:text-white"
+                className="lucide lucide-skip-forward-icon lucide-skip-forward hover:text-white "
               >
                 <path d="M21 4v16" />
                 <path d="M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z" />
@@ -171,7 +171,7 @@ export default function PlayingBar() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="lucide lucide-repeat1-icon lucide-repeat-1"
+                  className="lucide lucide-repeat1-icon lucide-repeat-1 text-green-400"
                 >
                   <path d="m17 2 4 4-4 4" />
                   <path d="M3 11v-1a4 4 0 0 1 4-4h14" />
@@ -215,7 +215,7 @@ export default function PlayingBar() {
             </div>
           </div>
         </div>
-        <div className="flex-1 flex">
+        <div className="flex-1 flex ">
           <div className="flex-1 flex items-center gap-3 justify-center">
             <button
               onClick={() => setIsMute((prev) => !prev)}
@@ -232,7 +232,7 @@ export default function PlayingBar() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="lucide lucide-volume-off-icon lucide-volume-off"
+                  className="lucide lucide-volume-off-icon lucide-volume-off text-red-500"
                 >
                   <path d="M16 9a5 5 0 0 1 .95 2.293" />
                   <path d="M19.364 5.636a9 9 0 0 1 1.889 9.96" />
@@ -272,7 +272,7 @@ export default function PlayingBar() {
           </div>
         </div>
       </div>
-      <div className="bg-green-600 h-1 color-red fixed bottom-0 left-0 w-full flex justify-end items-center p-2 font-medium text-xs hover:underline">
+      <div className="bg-green-600 h-3 color-red fixed bottom-0 left-0 w-full flex justify-end items-center p-2  font-medium text-xs hover:underline ">
         <p> Playin here: Web Player (Chrome)</p>
       </div>
     </div>
