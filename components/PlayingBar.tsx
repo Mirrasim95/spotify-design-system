@@ -71,7 +71,10 @@ export default function PlayingBar() {
               </svg>
             </button>
 
-            <button onClick={() => setIsPlaying((prev) => !prev)}>
+            <button
+              onClick={() => setIsPlaying((prev) => !prev)}
+              className="scale-130 transition duration-200 active:scale-110 "
+            >
               {isPlaying ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -189,7 +192,7 @@ export default function PlayingBar() {
           <div className="flex-1 flex items-center gap-3 justify-center">
             <button
               onClick={() => setIsMute((prev) => !prev)}
-              className="hover:text-white"
+              className="hover:text-white "
             >
               {isMute ? (
                 <svg
@@ -199,9 +202,9 @@ export default function PlayingBar() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="lucide lucide-volume-off-icon lucide-volume-off"
                 >
                   <path d="M16 9a5 5 0 0 1 .95 2.293" />
@@ -236,7 +239,7 @@ export default function PlayingBar() {
                 max="100"
                 value={volume}
                 onChange={(e) => setVolume(Number(e.target.value))}
-                className="w-full"
+                className="w-24 cursor-pointer"
               />
             </div>
           </div>
