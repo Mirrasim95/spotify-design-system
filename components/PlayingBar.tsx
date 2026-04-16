@@ -19,17 +19,17 @@ export default function PlayingBar() {
         }
         return prev + 1;
       });
-    }, 1000);
+    }, 300);
 
     return () => clearInterval(interval);
   }, [isPlaying]);
 
   return (
     <div>
-      <div className="fixed bottom-0 left-0 w-full h-25 bg-black text-gray-400 flex justify-around pt-2.5">
-        <div></div>
-        <div>
-          <div className="flex items-center justify-center gap-5 ">
+      <div className="flex items-center justify-between fixed bottom-0 left-0 w-full h-25 bg-black text-gray-400 ">
+        <div className="flex-1 items-center"></div>
+        <div className="flex-1 flex-col items-center justify-center">
+          <div className="flex items-center justify-center gap-5">
             <button onClick={() => setIsActive((prev) => !prev)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,21 +51,23 @@ export default function PlayingBar() {
               </svg>
             </button>
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-skip-back-icon lucide-skip-back hover:text-white"
-            >
-              <path d="M17.971 4.285A2 2 0 0 1 21 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z" />
-              <path d="M3 20V4" />
-            </svg>
+            <button onClick={() => setProgress((prev) => (prev = 0))}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-skip-back-icon lucide-skip-back hover:text-white"
+              >
+                <path d="M17.971 4.285A2 2 0 0 1 21 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z" />
+                <path d="M3 20V4" />
+              </svg>
+            </button>
 
             <button onClick={() => setIsPlaying((prev) => !prev)}>
               {isPlaying ? (
@@ -104,23 +106,28 @@ export default function PlayingBar() {
               )}
             </button>
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-skip-forward-icon lucide-skip-forward hover:text-white"
-            >
-              <path d="M21 4v16" />
-              <path d="M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z" />
-            </svg>
+            <button onClick={() => setProgress((prev) => (prev = 0))}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-skip-forward-icon lucide-skip-forward hover:text-white"
+              >
+                <path d="M21 4v16" />
+                <path d="M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z" />
+              </svg>
+            </button>
 
-            <button onClick={() => setIsRepead((prev) => !prev)}>
+            <button
+              onClick={() => setIsRepead((prev) => !prev)}
+              className="hover:text-white"
+            >
               {isRepeat ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -161,12 +168,10 @@ export default function PlayingBar() {
               )}
             </button>
           </div>
-          <div>
+          <div className="flex justify-center">
             <div className="w-100 flex items-center gap-3 text-white pt-2">
-              {/* current time */}
               <span className="text-xs">0:45</span>
 
-              {/* bar */}
               <div className="flex-1 h-1 bg-gray-600 rounded-full relative">
                 <div
                   className="h-1 bg-white rounded-full"
@@ -174,14 +179,35 @@ export default function PlayingBar() {
                 />
               </div>
 
-              {/* total time */}
               <span className="text-xs">3:20</span>
             </div>
           </div>
         </div>
-        <div></div>
+        <div className="flex-1 flex">
+          <div className="flex-1 flex items-center gap-3 justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-volume2-icon lucide-volume-2"
+            >
+              <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
+              <path d="M16 9a5 5 0 0 1 0 6" />
+              <path d="M19.364 18.364a9 9 0 0 0 0-12.728" />
+            </svg>
+            <div className="w-24 flex items-center gap-3 bg-gray-600 ">
+              <div className="flex-1 h-1 bg-gray-600 rounded-full relative" />
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="bg-green-600 h-5 color-red fixed bottom-0 left-0 w-full flex justify-end items-center p-2 font-bold text-xs hover:underline">
+      <div className="bg-green-600 h-1 color-red fixed bottom-0 left-0 w-full flex justify-end items-center p-2 font-medium text-xs hover:underline">
         <p> Playin here: Web Player (Chrome)</p>
       </div>
     </div>
