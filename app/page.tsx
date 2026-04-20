@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import AlbumList from "@/components/AlbumList";
 
 type Album = {
   id: string;
@@ -41,13 +42,7 @@ export default function Home() {
     <div>
       <h1>Albums</h1>
 
-      {albums.map((album) => (
-        <div key={album.id}>
-          <Image src={album.images[0]?.url} width={100} alt="album image" />
-          <div>{album.name}</div>
-          <div>{album.artists.map((a) => a.name).join(", ")}</div>
-        </div>
-      ))}
+      <AlbumList />
     </div>
   );
 }
