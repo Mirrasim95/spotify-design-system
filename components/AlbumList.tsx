@@ -13,7 +13,7 @@ interface AlbumListProps {
 
 export default function AlbumList({ albums }: AlbumListProps) {
   return (
-    <div>
+    <div className="grid grid-cols-5 gap-5">
       {albums.map((item) => (
         <AlbumCard
           key={item.id}

@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import AlbumList from "@/components/AlbumList";
 
 type Album = {
@@ -42,7 +41,7 @@ export default function Home() {
     <div>
       <h1>Albums</h1>
 
-      <AlbumList />
+      <AlbumList albums={albums} />
     </div>
   );
 }

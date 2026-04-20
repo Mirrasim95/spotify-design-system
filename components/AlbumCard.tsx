@@ -14,13 +14,13 @@ export default function AlbumCard({
   artists,
 }: AlbumCardProps) {
   return (
-    <div>
+    <div className="bg-[#181818] hover:bg-[#282828] transition p-4 rounded-lg cursor-pointer">
       <Image
         src={images[0].url}
         alt="album image"
-        width={100}
-        height={100}
-        className="rounded-2xl"
+        width={150}
+        height={150}
+        className="rounded-sm"
       />
       <p>{name}</p>
       <p>{artists.map((a) => a.name).join(", ")}</p>
