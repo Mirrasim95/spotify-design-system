@@ -29,13 +29,13 @@ export default function PlayingBar() {
 
   return (
     <div>
-      <div className="flex items-center justify-between fixed bottom-0 left-0 w-full h-25 bg-black text-gray-400 ">
+      <div className="flex items-center fixed bottom-0 left-0 w-full h-25 bg-black text-gray-400">
         <div className="flex-1 items-center justify-center flex gap-5">
           <div>
             <Image
               src={"/album-cover.jpg"}
-              width={70}
-              height={80}
+              width={60}
+              height={70}
               alt="album cover"
             />
           </div>
@@ -48,7 +48,7 @@ export default function PlayingBar() {
             </p>
           </div>
         </div>
-        <div className="flex-1 flex flex-col gap-2 ">
+        <div className="flex-1 flex flex-col">
           <div className="flex items-center justify-center gap-5">
             <button
               onClick={() => setIsActive((prev) => !prev)}

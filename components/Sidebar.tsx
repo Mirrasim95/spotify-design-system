@@ -14,14 +14,14 @@ const nav = [
 export const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <aside className="bg-gray-900 ">
+    <aside className="bg-gray-900">
       <Link href={"/"} className="pl-10">
         <Image
           src="./spotify-logo.svg"
           width={150}
           height={50}
           alt="Spotify logo"
-          className="mb-20 m-10"
+          className="mb-10 m-7"
         />
       </Link>
       <div className="bg-gray-900 flex flex-col h-screen w-64 shrink-0 gap-6 pl-15 ">
