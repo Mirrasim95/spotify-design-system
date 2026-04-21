@@ -1,30 +1,55 @@
-type Track = {
+import Image from "next/image";
+
+interface Track {
   id: string;
   name: string;
   duration_ms: number;
   album: Album;
   artists: { name: string }[];
-};
+}
 
-type Album = {
+interface Album {
   id: string;
   name: string;
   images: { url: string }[];
   artists: { name: string }[];
-};
+}
 
 interface TrackRowProps {
   index: number;
   track: Track;
 }
 
+const formatTime = (ms: number) => {
+  const seconds = Math.floor(ms / 1000);
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${s.toString().padStart(2, "0")}`;
+};
+
 export default function TrackRow({ index, track }: TrackRowProps) {
   return (
-    <div className="grid grid-cols-4 items-center px-4 py-2 hover:bg-[#282828] rounded-md group">
-      {/* 1. номер */}
-      {/* 2. обложка + название + артист */}
-      {/* 3. альбом */}
-      {/* 4. длительность */}
+    <div className="grid grid-cols-4 items-center px-4 py-2 hover:bg-[#282828] rounded-md cursor-pointer">
+      <span className="text-gray-400">{index}</span>
+
+      <div className="flex items-center gap-3">
+        <Image
+          src={track.album.images[0].url}
+          alt="track image"
+          width={40}
+          height={40}
+        />
+        <div>
+          <p className="text-white">{track.name}</p>
+          <p className="text-gray-400 text-sm">
+            {track.artists.map((a) => a.name).join(", ")}
+          </p>
+        </div>
+      </div>
+
+      <span className="text-gray-400">{track.album.name}</span>
+
+      <span className="text-gray-400">{formatTime(track.duration_ms)}</span>
     </div>
   );
 }
