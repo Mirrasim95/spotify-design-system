@@ -58,12 +58,17 @@ export default function Home() {
     fetchSpotify();
   }, []);
 
+  // bg-[#0e0e0e]
   return (
-    <div className="p-5">
-      <h2 className="text-white text-xl font-bold mb-4">Albums</h2>
+    <div>
+      <h2 className="text-white text-xl font-bold mt-5 ml-5 hover:underline cursor-pointer">
+        Albums
+      </h2>
       <AlbumList albums={albums} />
 
-      <h2 className="text-white text-xl font-bold mt-8 mb-4">Tracks</h2>
+      <h2 className="text-white text-xl font-bold mt-5 ml-5 hover:underline cursor-pointer">
+        Tracks
+      </h2>
       <TrackList tracks={tracks} />
     </div>
   );

@@ -14,7 +14,7 @@ const nav = [
 export const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <aside className="bg-gray-900">
+    <aside className="bg-black">
       <Link href={"/"} className="pl-10">
         <Image
           src="./spotify-logo.svg"
@@ -24,7 +24,7 @@ export const Sidebar = () => {
           className="mb-10 m-7"
         />
       </Link>
-      <div className="bg-gray-900 flex flex-col h-screen w-64 shrink-0 gap-6 pl-15 ">
+      <div className="bg-black flex flex-col h-screen w-64 shrink-0 gap-6 pl-15 ">
         {nav.map((item) => (
           <Link
             key={item.href}
