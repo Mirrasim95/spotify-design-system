@@ -26,39 +26,38 @@ export default function Home() {
     async function fetchSpotify() {
       const tokenRes = await fetch("/api/token");
       const tokenData = await tokenRes.json();
-
       const token = tokenData.access_token;
 
-      const res = await fetch(
-        `https://api.spotify.com/v1/search?q=eminem&type=album&limit=10`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
+      const [res, resTrack] = await Promise.all([
+        fetch(
+          `https://api.spotify.com/v1/search?q=eminem&type=album&limit=10`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
           },
-        },
-      );
-      const resTrack = await fetch(
-        `https://api.spotify.com/v1/search?q=eminem&type=track&limit=10`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
+        ),
+        fetch(
+          `https://api.spotify.com/v1/search?q=eminem&type=track&limit=10`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
           },
-        },
-      );
+        ),
+      ]);
 
-      const trackData = await resTrack.json();
-      console.log("trackData:", trackData);
       const data = await res.json();
-      setTracks(trackData.tracks.items);
-      setAlbums(data.albums.items);
+      const trackData = await resTrack.json();
 
-      console.log(data);
+      if (data.error || trackData.error) {
+        console.log("Spotify API error, try again later");
+        return;
+      }
+
+      if (data.albums) setAlbums(data.albums.items);
+      if (trackData.tracks) setTracks(trackData.tracks.items);
     }
 
     fetchSpotify();
   }, []);
 
-  // bg-[#0e0e0e]
   return (
     <div>
       <h2 className="text-white text-xl font-bold mt-5 ml-5 hover:underline cursor-pointer">
