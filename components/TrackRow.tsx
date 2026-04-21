@@ -29,27 +29,32 @@ const formatTime = (ms: number) => {
 
 export default function TrackRow({ index, track }: TrackRowProps) {
   return (
-    <div className="grid grid-cols-4 items-center px-4 py-2 hover:bg-[#282828] rounded-md cursor-pointer">
-      <span className="text-gray-400">{index + 1}</span>
+    <div className="flex justify-start items-center px-4 py-2 hover:bg-[#282828] rounded-md cursor-pointer overflow-hidden">
+      <span className="text-gray-400 w-[5%]">{index + 1}</span>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 overflow-hidden w-[50%]">
         <Image
           src={track.album.images[0].url}
           alt="track image"
           width={40}
           height={40}
+          className="shrink-0"
         />
-        <div>
-          <p className="text-white">{track.name}</p>
-          <p className="text-gray-400 text-sm">
+        <div className="overflow-hidden">
+          <p className="text-white truncate">{track.name}</p>
+          <p className="text-gray-400 text-sm truncate">
             {track.artists.map((a) => a.name).join(", ")}
           </p>
         </div>
       </div>
 
-      <span className="text-gray-400">{track.album.name}</span>
+      <span className="text-gray-400 truncate overflow-hidden text-sm w-[40%]">
+        {track.album.name}
+      </span>
 
-      <span className="text-gray-400">{formatTime(track.duration_ms)}</span>
+      <span className="text-gray-400 w-[5%]">
+        {formatTime(track.duration_ms)}
+      </span>
     </div>
   );
 }
