@@ -20,7 +20,7 @@ export default function Home() {
       const token = tokenData.access_token;
 
       const res = await fetch(
-        `https://api.spotify.com/v1/search?q=eminem&type=album&limit=5`,
+        `https://api.spotify.com/v1/search?q=eminem&type=album&limit=10`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -38,9 +38,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      <h1>Albums</h1>
-
+    <div className="p-5">
       <AlbumList albums={albums} />
     </div>
   );
