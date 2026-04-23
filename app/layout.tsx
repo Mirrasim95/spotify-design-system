@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="dark">
-      <body className="flex w-screen h-screen overflow-hidden dark:text-white ">
+      <body className="flex w-screen h-screen ">
         <Providers>
           <Sidebar />
           <main>{children}</main>
