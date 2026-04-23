@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/Sidebar";
 import PlayingBar from "@/components/PlayingBar";
+import { Providers } from "@/components/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,15 +28,20 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="flex w-full h-screen overflow-hidden">
-        {" "}
-        <Sidebar />
-        <main className="flex-1 bg-[#121212] overflow-y-auto pb-32 text-white">
-          {children}
-        </main>
-        <PlayingBar />
+      <body className="flex w-screen h-screen overflow-hidden">
+        <Providers>
+          <Sidebar />
+          <main
+            style={{ flex: 1, overflowY: "auto", paddingBottom: 128 }}
+            className="bg-white dark:bg-[#121212] text-black dark:text-white p-8"
+          >
+            {children}
+          </main>
+          <PlayingBar />
+        </Providers>
       </body>
     </html>
   );

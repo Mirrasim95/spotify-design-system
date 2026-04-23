@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html.dark {
+  color-scheme: dark;
+}
+
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;

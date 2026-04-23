@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 const nav = [
   { href: "/", label: "🏠", text: "Home" },
@@ -12,7 +11,6 @@ const nav = [
 ];
 
 export const Sidebar = () => {
-  const pathname = usePathname();
   return (
     <aside className="bg-black">
       <Link href={"/"} className="pl-10">
@@ -24,6 +22,7 @@ export const Sidebar = () => {
           className="mb-10 m-7"
         />
       </Link>
+
       <div className="bg-black flex flex-col h-screen w-64 shrink-0 gap-6 pl-15 ">
         {nav.map((item) => (
           <Link
