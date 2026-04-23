@@ -29,7 +29,7 @@ const formatTime = (ms: number) => {
 
 export default function TrackRow({ index, track }: TrackRowProps) {
   return (
-    <div className="flex justify-start items-center px-4 py-2 hover:bg-[#282828] rounded-md cursor-pointer overflow-hidden">
+    <div className="flex justify-start items-center px-4 py-2 hover:bg-gray-200 dark:hover:bg-[#282828] rounded-md cursor-pointer overflow-hidden">
       <span className="text-gray-400 w-[5%]">{index + 1}</span>
 
       <div className="flex items-center gap-3 overflow-hidden w-[50%]">

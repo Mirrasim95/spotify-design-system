@@ -61,7 +61,7 @@ export default function PlayingBar() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className={isActive ? " text-green-400" : "hover:text-white"}
+                className={isActive ? " text-green-400" : "hover:text-gray-500"}
               >
                 <path d="m18 14 4 4-4 4" />
                 <path d="m18 2 4 4-4 4" />
@@ -85,7 +85,7 @@ export default function PlayingBar() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="lucide lucide-skip-back-icon lucide-skip-back hover:text-white"
+                className="lucide lucide-skip-back-icon lucide-skip-back hover:text-gray-500"
               >
                 <path d="M17.971 4.285A2 2 0 0 1 21 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z" />
                 <path d="M3 20V4" />
@@ -107,7 +107,7 @@ export default function PlayingBar() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="lucide lucide-circle-pause-icon lucide-circle-pause hover:text-white"
+                  className="lucide lucide-circle-pause-icon lucide-circle-pause hover:text-gray-500"
                 >
                   <circle cx="12" cy="12" r="10" />
                   <line x1="10" x2="10" y1="15" y2="9" />
@@ -124,7 +124,7 @@ export default function PlayingBar() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="lucide lucide-circle-play-icon lucide-circle-play hover:text-white"
+                  className="lucide lucide-circle-play-icon lucide-circle-play hover:text-gray-500"
                 >
                   <path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
                   <circle cx="12" cy="12" r="10" />
@@ -146,7 +146,7 @@ export default function PlayingBar() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="lucide lucide-skip-forward-icon lucide-skip-forward hover:text-white "
+                className="lucide lucide-skip-forward-icon lucide-skip-forward hover:text-gray-500"
               >
                 <path d="M21 4v16" />
                 <path d="M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z" />
@@ -155,7 +155,7 @@ export default function PlayingBar() {
 
             <button
               onClick={() => setIsRepead((prev) => !prev)}
-              className="hover:text-white transition duration-200 active:scale-80 "
+              className="hover:text-gray-500 transition duration-200 active:scale-80 "
             >
               {isRepeat ? (
                 <svg
@@ -201,9 +201,9 @@ export default function PlayingBar() {
             <div className="w-100 flex items-center gap-3 text-black dark:text-white pt-2">
               <span className="text-xs">0:45</span>
 
-              <div className="flex-1 h-1 bg-gray-600 rounded-full relative">
+              <div className="flex-1 h-1 bg-black dark:bg-gray-600 rounded-full relative ">
                 <div
-                  className="h-1 bg-white rounded-full"
+                  className="h-1 bg-gray-300 rounded-full"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -213,10 +213,10 @@ export default function PlayingBar() {
           </div>
         </div>
         <div className="flex-1 flex ">
-          <div className="flex-1 flex items-center gap-3 justify-center">
+          <div className="flex-1 flex items-center gap-3 justify-center ">
             <button
               onClick={() => setIsMute((prev) => !prev)}
-              className="hover:text-white transition duration-200 active:scale-80 "
+              className="hover:text-gray-500 transition duration-200 active:scale-80 "
             >
               {isMute ? (
                 <svg
