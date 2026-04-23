@@ -26,11 +26,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="dark">
-      <body className="flex w-screen h-screen ">
+    <html lang="en" suppressHydrationWarning>
+      <body className="flex w-screen h-screen">
         <Providers>
           <Sidebar />
-          <main>{children}</main>
+          <main
+            style={{ flex: 1, overflowY: "auto", paddingBottom: "120px" }}
+            className="p-8"
+          >
+            {children}
+          </main>
           <PlayingBar />
         </Providers>
       </body>

@@ -18,7 +18,7 @@ export default function ThemeToggle() {
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className="px-3 py-2 rounded  dark:bg-gray-200 mr-5 bg-gray-700 text-black"
     >
-      {theme === "dark" ? "light" : "dark"}
+      {theme === "dark" ? "Light" : "Dark"}
     </button>
   );
 }

@@ -41,8 +41,8 @@ export default function TrackRow({ index, track }: TrackRowProps) {
           className="shrink-0"
         />
         <div className="overflow-hidden">
-          <p className="text-white truncate">{track.name}</p>
-          <p className="text-gray-400 text-sm truncate">
+          <p className="truncate">{track.name}</p>
+          <p className="text-gray-500 text-sm truncate">
             {track.artists.map((a) => a.name).join(", ")}
           </p>
         </div>

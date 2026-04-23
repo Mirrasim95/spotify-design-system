@@ -29,7 +29,8 @@ export default function PlayingBar() {
 
   return (
     <div>
-      <div className="flex items-center fixed bottom-0 left-0 w-full h-25 text-gray-400">
+      <div className="flex items-center fixed bottom-0 left-0 w-full h-25 bg-white/80 dark:bg-black/30 backdrop-blur-md text-black dark:text-white">
+        {" "}
         <div className="flex-1 items-center justify-center flex gap-5">
           <div>
             <Image
@@ -40,12 +41,8 @@ export default function PlayingBar() {
             />
           </div>
           <div>
-            <p className="text-gray-200 hover:underline cursor-pointer">
-              Trinti Productions
-            </p>
-            <p className="text-gray-500 text-sm hover:underline cursor-pointer">
-              Paradice
-            </p>
+            <p className="hover:underline cursor-pointer">Trinti Productions</p>
+            <p className="text-sm hover:underline cursor-pointer">Paradice</p>
           </div>
         </div>
         <div className="flex-1 flex flex-col">
@@ -201,7 +198,7 @@ export default function PlayingBar() {
             </button>
           </div>
           <div className="flex justify-center">
-            <div className="w-100 flex items-center gap-3 text-white pt-2">
+            <div className="w-100 flex items-center gap-3 text-black dark:text-white pt-2">
               <span className="text-xs">0:45</span>
 
               <div className="flex-1 h-1 bg-gray-600 rounded-full relative">

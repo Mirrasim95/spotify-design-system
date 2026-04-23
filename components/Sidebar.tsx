@@ -30,7 +30,7 @@ export const Sidebar = () => {
           <Link
             key={item.href}
             href={item.href}
-            className="flex items-center gap-2 hover:text-white transition w-fit "
+            className="flex items-center gap-2 hover:text-gray-500 transition w-fit"
           >
             <span>{item.label}</span>
             <span>{item.text}</span>

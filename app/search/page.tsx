@@ -73,7 +73,7 @@ export default function Search() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-          className="flex-1 p-3 rounded-lg bg-[#282828] text-white outline-none"
+          className="flex-1 p-3 rounded-lg bg-[#7a7a7a] outline-none w-250"
         />
         <button
           onClick={handleSearch}

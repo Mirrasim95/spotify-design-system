@@ -14,7 +14,7 @@ export default function AlbumCard({
   artists,
 }: AlbumCardProps) {
   return (
-    <div className="hover:bg-[#282828] transition delay-150 ease-in-out p-3 rounded-lg cursor-pointer ">
+    <div className="dark:hover:bg-[#282828] transition delay-150 ease-in-out p-3 rounded-lg cursor-pointer ">
       <Image
         src={images[0].url}
         alt="album image"
