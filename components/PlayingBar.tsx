@@ -29,7 +29,7 @@ export default function PlayingBar() {
 
   return (
     <div>
-      <div className="flex items-center fixed bottom-0 left-0 w-full h-25 bg-black text-gray-400">
+      <div className="flex items-center fixed bottom-0 left-0 w-full h-25 text-gray-400">
         <div className="flex-1 items-center justify-center flex gap-5">
           <div>
             <Image

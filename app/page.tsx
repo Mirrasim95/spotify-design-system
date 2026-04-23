@@ -60,12 +60,12 @@ export default function Home() {
 
   return (
     <div>
-      <h2 className="text-white text-xl font-bold mt-5 ml-5 hover:underline cursor-pointer">
+      <h2 className="text-xl font-bold mt-5 ml-5 hover:underline cursor-pointer">
         Albums
       </h2>
       <AlbumList albums={albums} />
 
-      <h2 className="text-white text-xl font-bold mt-5 ml-5 hover:underline cursor-pointer">
+      <h2 className="text-xl font-bold mt-5 ml-5 hover:underline cursor-pointer">
         Tracks
       </h2>
       <TrackList tracks={tracks} />

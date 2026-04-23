@@ -3,20 +3,20 @@
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
-export default function ThemeButtont() {
+export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-  });
+  }, []);
 
   if (!mounted) return null;
 
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="px-3 py-2 rounded bg-gray-200 dark:bg-gray-800"
+      className="px-3 py-2 rounded bg-gray-200 dark:bg-gray-800 mr-5"
     >
       {theme === "dark" ? "light" : "dark"}
     </button>

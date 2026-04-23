@@ -1,7 +1,9 @@
 "use client";
 
+import { ThemeProvider } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 const nav = [
   { href: "/", label: "🏠", text: "Home" },
@@ -12,7 +14,7 @@ const nav = [
 
 export const Sidebar = () => {
   return (
-    <aside className="bg-black">
+    <aside>
       <Link href={"/"} className="pl-10">
         <Image
           src="./spotify-logo.svg"
@@ -23,17 +25,18 @@ export const Sidebar = () => {
         />
       </Link>
 
-      <div className="bg-black flex flex-col h-screen w-64 shrink-0 gap-6 pl-15 ">
+      <div className="flex flex-col h-screen w-64 shrink-0 gap-6 pl-15 ">
         {nav.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className="flex items-center gap-2 text-gray-300 hover:text-white transition w-fit "
+            className="flex items-center gap-2  dark:text-gray-300 hover:text-white transition w-fit "
           >
             <span>{item.label}</span>
             <span>{item.text}</span>
           </Link>
         ))}
+        <ThemeToggle />
       </div>
     </aside>
   );

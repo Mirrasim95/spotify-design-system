@@ -26,20 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-    >
-      <body className="flex w-screen h-screen overflow-hidden">
+    <html lang="en" suppressHydrationWarning className="dark">
+      <body className="flex w-screen h-screen overflow-hidden dark:text-white ">
         <Providers>
           <Sidebar />
-          <main
-            style={{ flex: 1, overflowY: "auto", paddingBottom: 128 }}
-            className="bg-white dark:bg-[#121212] text-black dark:text-white p-8"
-          >
-            {children}
-          </main>
+          <main>{children}</main>
           <PlayingBar />
         </Providers>
       </body>
