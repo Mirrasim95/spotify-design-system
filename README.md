@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Spotify Design System
 
-## Getting Started
+A Spotify-inspired music platform built with Next.js, Tailwind CSS, and the Spotify Web API.
 
-First, run the development server:
+---
+
+## Features
+
+- 🎵 Real Spotify API integration (albums, tracks, search)
+- 🌙 Light / Dark theme switching
+- 🔍 Search by artist, album, or track
+- 🎛️ Interactive PlayingBar with play/pause, shuffle, repeat
+- 📱 Responsive layout with sidebar navigation
+
+---
+
+## Tech Stack
+
+- **Next.js 15** (App Router)
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Spotify Web API**
+- **next-themes** (dark/light mode)
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Mirrasim95/spotify-design-system.git
+cd spotify-design-system
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+## Getting Spotify API Keys
+
+To use the Spotify API you need to create a free developer account:
+
+1. Go to [https://developer.spotify.com/dashboard](https://developer.spotify.com/dashboard)
+2. Log in with your Spotify account (or create one for free)
+3. Click **"Create App"**
+4. Fill in:
+   - **App name:** anything you want (e.g. `spotify-design-system`)
+   - **App description:** anything
+   - **Redirect URI:** `http://localhost:3000`
+   - Check the **Web API** checkbox
+5. Click **Save**
+6. Open your app and click **Settings**
+7. Copy your **Client ID** and **Client Secret**
+
+Create a `.env.local` file in the root of the project:
+
+```env
+SPOTIFY_CLIENT_ID=paste_your_client_id_here
+SPOTIFY_CLIENT_SECRET=paste_your_client_secret_here
+```
+
+Run the project:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+spotify-design-system/
+├── app/
+│   ├── layout.tsx         # Root layout with Sidebar and PlayingBar
+│   ├── page.tsx           # Home page (albums + tracks)
+│   ├── search/
+│   │   └── page.tsx       # Search page
+│   ├── library/
+│   │   └── page.tsx       # Your Library page
+│   └── liked/
+│       └── page.tsx       # Liked Songs page
+├── components/
+│   ├── Sidebar.tsx        # Navigation sidebar
+│   ├── PlayingBar.tsx     # Music player controls
+│   ├── AlbumCard.tsx      # Album card component
+│   ├── AlbumList.tsx      # Grid of album cards
+│   ├── TrackRow.tsx       # Single track row
+│   ├── TrackList.tsx      # List of tracks
+│   ├── ThemeToggle.tsx    # Dark/Light button
+│   └── ThemeProvider.tsx  # Light/Dark theme provider
+├── public/
+│   └── spotify-logo.svg
+└── README.md
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Route      | Description                           |
+| ---------- | ------------------------------------- |
+| `/`        | Home — featured albums and top tracks |
+| `/search`  | Search artists, albums, tracks        |
+| `/library` | Your library                          |
+| `/liked`   | Liked songs                           |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Design System
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Colors:** Spotify green `#1DB954`, dark `#121212`, card `#181818`
+- **Typography:** Geist Sans, Geist Mono
+- **Theme:** Full light/dark mode support via `next-themes`
+- **Components:** Reusable, typed with TypeScript interfaces
+
+---
+
+## Screenshots
+
+See `screenshots/` folder for light and dark mode previews.
+
+---
+
+### The Core Team
+
+suleyma_mi
+
+<span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
+<span><img alt='Qwasar SV -- Software Engineering School Logo' src='https://storage.googleapis.com/qwasar-public/qwasar-logo_50x50.png' width='20px' /></span>
