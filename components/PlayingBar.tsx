@@ -34,7 +34,7 @@ export default function PlayingBar() {
         <div className="flex-1 items-center justify-center flex gap-5">
           <div>
             <Image
-              src={"/album-cover.jpg"}
+              src={"/covers/paradise.jpg"}
               width={60}
               height={70}
               alt="album cover"
