@@ -30,10 +30,7 @@ export default function RootLayout({
       <body className="flex w-screen h-screen">
         <Providers>
           <Sidebar />
-          <main
-            style={{ flex: 1, overflowY: "auto", paddingBottom: "120px" }}
-            className="p-8"
-          >
+          <main style={{ flex: 1, overflowY: "auto", paddingBottom: "120px" }}>
             {children}
           </main>
           <PlayingBar />

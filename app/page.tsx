@@ -1,4 +1,7 @@
 "use client";
+
+import clsx from "clsx";
+import styles from "@/app/page.module.css";
 import { useEffect, useState } from "react";
 import AlbumList from "@/components/AlbumList";
 import TrackList from "@/components/TrackList";
@@ -59,7 +62,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className={clsx(styles.main, "m-0")}>
       <h2 className="text-xl font-bold mt-5 ml-5 hover:underline cursor-pointer">
         Albums
       </h2>

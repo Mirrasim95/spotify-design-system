@@ -13,16 +13,18 @@ interface AlbumListProps {
 
 export default function AlbumList({ albums }: AlbumListProps) {
   return (
-    <div className="grid grid-cols-2 xl:grid-cols-5 2xl:grid-cols-5 ">
-      {albums.map((item) => (
-        <AlbumCard
-          key={item.id}
-          id={item.id}
-          name={item.name}
-          images={item.images}
-          artists={item.artists}
-        />
-      ))}
+    <div data-aos="fade-right">
+      <div className="grid grid-cols-2 xl:grid-cols-5 2xl:grid-cols-5 ">
+        {albums.map((item) => (
+          <AlbumCard
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            images={item.images}
+            artists={item.artists}
+          />
+        ))}
+      </div>
     </div>
   );
 }

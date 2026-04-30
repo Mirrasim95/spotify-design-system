@@ -30,9 +30,9 @@ const formatTime = (ms: number) => {
 export default function TrackRow({ index, track }: TrackRowProps) {
   return (
     <div className="flex justify-start items-center px-4 py-2 hover:bg-gray-200 dark:hover:bg-[#282828] rounded-md cursor-pointer overflow-hidden">
-      <span className="text-gray-400 w-[5%]">{index + 1}</span>
+      <span className="text-gray-400 w-[5%] max-md:pr-5">{index + 1}</span>
 
-      <div className="flex items-center gap-3 overflow-hidden w-[60%] md:w-[50%]">
+      <div className="flex items-center gap-3 overflow-hidden w-[60%] max-md:w-[80%]">
         <Image
           src={track.album.images[0].url}
           alt="track image"
@@ -48,12 +48,11 @@ export default function TrackRow({ index, track }: TrackRowProps) {
         </div>
       </div>
 
-      {/* скрываем альбом на мобильном */}
-      <span className="hidden md:block text-gray-400 truncate text-sm w-[40%]">
+      <span className="hidden md:block text-gray-400 truncate text-sm w-[40%] max-md:hidden">
         {track.album.name}
       </span>
 
-      <span className="text-gray-400 w-[5%] md:w-[5%]">
+      <span className="flex text-gray-400 w-[5%] ">
         {formatTime(track.duration_ms)}
       </span>
     </div>

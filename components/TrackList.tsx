@@ -1,3 +1,5 @@
+"use client";
+
 import TrackRow from "./TrackRow";
 
 interface Album {
