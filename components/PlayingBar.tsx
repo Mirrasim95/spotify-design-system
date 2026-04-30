@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import TrackInfo from "./TrackInfo";
 
 export default function PlayingBar() {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -31,20 +32,7 @@ export default function PlayingBar() {
     <div>
       <div className="flex items-center fixed bottom-0 left-0 w-full h-25 bg-white/80 dark:bg-black/30 backdrop-blur-md text-black dark:text-white">
         {" "}
-        <div className="flex-1 items-center justify-center flex gap-5">
-          <div>
-            <Image
-              src={"/covers/paradise.jpg"}
-              width={60}
-              height={70}
-              alt="album cover"
-            />
-          </div>
-          <div>
-            <p className="hover:underline cursor-pointer">Trinti Productions</p>
-            <p className="text-sm hover:underline cursor-pointer">Paradice</p>
-          </div>
-        </div>
+        <TrackInfo />
         <div className="flex-1 flex flex-col">
           <div className="flex items-center justify-center gap-5">
             <button

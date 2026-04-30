@@ -22,7 +22,7 @@ export default function AlbumCard({
         height={150}
         className="rounded-sm w-full aspect-square object-cover"
       />
-      <p className="mt-2 text-sm">{name}</p>
+      <p className="mt-2 text-sm max-md:text-xs">{name}</p>
       <p className="text-gray-400 text-xs">
         {artists.map((a) => a.name).join(", ")}
       </p>
