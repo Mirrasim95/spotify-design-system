@@ -12,9 +12,8 @@ interface AlbumListProps {
 }
 
 export default function AlbumList({ albums }: AlbumListProps) {
-  console.log("AlbumList albums:", albums.length);
   return (
-    <div className="grid grid-cols-5 xl:grid-cols-5 2xl:grid-cols-5 ">
+    <div className="grid grid-cols-2 xl:grid-cols-5 2xl:grid-cols-5 ">
       {albums.map((item) => (
         <AlbumCard
           key={item.id}

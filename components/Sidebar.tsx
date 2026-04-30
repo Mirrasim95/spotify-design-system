@@ -1,9 +1,12 @@
 "use client";
 
-import { ThemeProvider } from "next-themes";
+import clsx from "clsx";
+import styles from "./Sidebar.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const nav = [
   { href: "/", label: "🏠", text: "Home" },
@@ -13,31 +16,67 @@ const nav = [
 ];
 
 export const Sidebar = () => {
-  return (
-    <aside>
-      <Link href={"/"} className="pl-10">
-        <Image
-          src="./spotify-logo.svg"
-          width={150}
-          height={50}
-          alt="Spotify logo"
-          className="mb-10 m-7"
-        />
-      </Link>
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
-      <div className="flex flex-col h-screen w-64 shrink-0 gap-6 pl-15 ">
-        {nav.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="flex items-center gap-2 hover:text-gray-500 transition w-fit"
-          >
-            <span>{item.label}</span>
-            <span>{item.text}</span>
-          </Link>
-        ))}
+  // закрывать при переходе на страницу
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  return (
+    <>
+      {/* hamburger кнопка — только на мобильном */}
+      <button
+        className="fixed top-4 left-4 z-50 md:hidden bg-black dark:bg-white text-white dark:text-black p-2 rounded-md"
+        onClick={() => setIsOpen((prev) => !prev)}
+      >
+        ☰
+      </button>
+
+      {/* затемнение фона при открытом sidebar */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/90 z-40 md:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      <aside className={clsx(styles.sidebar, isOpen && styles.sidebarOpen)}>
+        <button
+          className="fixed top-4 left-4 z-50 md:hidden bg-black dark:bg-white text-white dark:text-black p-2 rounded-md"
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
+          ☰
+        </button>
+        <Link href={"/"}>
+          <Image
+            src="/spotify-logo.svg"
+            width={150}
+            height={50}
+            alt="Spotify logo"
+            className="mb-6 mt-10"
+          />
+        </Link>
+
+        <div className={styles.nav}>
+          {nav.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={clsx(
+                styles.navLink,
+                pathname === item.href && styles.navLinkActive,
+              )}
+            >
+              <span>{item.label}</span>
+              <span className={styles.linkText}>{item.text}</span>
+            </Link>
+          ))}
+        </div>
+
         <ThemeToggle />
-      </div>
-    </aside>
+      </aside>
+    </>
   );
 };
