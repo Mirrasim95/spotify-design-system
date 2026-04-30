@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function TrackInfo() {
   return (
-    <div className="flex-1 items-center justify-center flex gap-5">
+    <div className="flex-1 items-center justify-center flex gap-5 max-md:hidden">
       <div>
         <Image
           src={"/covers/paradise.jpg"}
