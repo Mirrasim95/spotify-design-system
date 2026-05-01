@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="flex w-screen h-screen">
+      <body suppressHydrationWarning className="flex w-screen h-screen">
         <Providers>
           <Sidebar />
           <main style={{ flex: 1, overflowY: "auto", paddingBottom: "120px" }}>
