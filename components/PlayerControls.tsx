@@ -1,5 +1,3 @@
-import React from "react";
-
 interface PlayerControlsProps {
   isRepeat: boolean;
   setIsRepead: (value: boolean | ((prev: boolean) => boolean)) => void;
@@ -7,8 +5,8 @@ interface PlayerControlsProps {
   setIsActive: (value: boolean | ((prev: boolean) => boolean)) => void;
   progress: number;
   setProgress: (value: number | ((prev: number) => number)) => void;
-  isPlaying?: boolean;
-  setIsPlaying?: (value: boolean | ((prev: boolean) => boolean)) => void;
+  isPlaying: boolean;
+  setIsPlaying: (value: boolean | ((prev: boolean) => boolean)) => void;
 }
 
 export default function PlayerControls({
