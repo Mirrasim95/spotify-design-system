@@ -69,11 +69,11 @@ export default function Search() {
       <div className="flex gap-2 mb-6">
         <input
           type="text"
-          placeholder="Поиск артиста, трека..."
+          placeholder="Search albums, tracks..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-          className="flex-1 p-3 rounded-lg bg-[#7a7a7a] outline-none w-250"
+          className="flex-1 p-3 rounded-lg bg-gray-200 outline-none w-250"
         />
         <button
           onClick={handleSearch}

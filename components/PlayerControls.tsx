@@ -22,8 +22,8 @@ export default function PlayerControls({
   setIsPlaying,
 }: PlayerControlsProps) {
   return (
-    <div className="flex-1 flex flex-col">
-      <div className="flex items-center justify-center gap-5">
+    <div className="flex-1 flex flex-col max-md:ml-4">
+      <div className="flex items-center justify-center gap-5 ">
         <button
           onClick={() => setIsActive((prev) => !prev)}
           className="transition duration-200 active:scale-80 "
@@ -175,10 +175,10 @@ export default function PlayerControls({
         </button>
       </div>
       <div className="flex justify-center">
-        <div className="w-100 flex items-center gap-3 text-black dark:text-white pt-2">
+        <div className="w-100 flex items-center gap-3 text-black dark:text-white pt-2 max-md:w-50 ">
           <span className="text-xs">0:45</span>
 
-          <div className="flex-1 h-1 bg-black dark:bg-gray-600 rounded-full relative ">
+          <div className="flex-1 h-1 bg-black dark:bg-gray-600 rounded-full relative">
             <div
               className="h-1 bg-gray-300 rounded-full"
               style={{ width: `${progress}%` }}

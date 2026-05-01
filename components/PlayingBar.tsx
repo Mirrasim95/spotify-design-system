@@ -44,7 +44,7 @@ export default function PlayingBar() {
           setIsPlaying={setIsPlaying}
         />
         <div className="flex-1 flex">
-          <div className="flex-1 flex items-center gap-3 justify-center ">
+          <div className="flex-1 flex items-center gap-3 justify-center max-sm:">
             <button
               onClick={() => setIsMute((prev) => !prev)}
               className="hover:text-gray-500 transition duration-200 active:scale-80 "
