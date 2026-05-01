@@ -1,6 +1,6 @@
 interface VolumeControlProps {
   volume: number;
-  setVolume: (value: number) => void;
+  setVolume: (value: boolean | ((prev: boolean) => boolean)) => void;
   isMute: boolean;
   setIsMute: (value: boolean | ((prev: boolean) => boolean)) => void;
 }

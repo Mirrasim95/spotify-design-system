@@ -31,7 +31,7 @@ export default function PlayingBar() {
 
   return (
     <div>
-      <div className="flex items-center fixed bottom-0 left-0 w-full h-25 bg-white/80 dark:bg-black/30 backdrop-blur-md text-black dark:text-white">
+      <div className="flex items-center fixed bottom-0 left-0 w-full h-25 bg-white/80 dark:bg-black/30 backdrop-blur-md text-black dark:text-white max-md:h-20">
         {" "}
         <TrackInfo />
         <PlayerControls
@@ -51,7 +51,7 @@ export default function PlayingBar() {
           setIsMute={setIsMute}
         />
       </div>
-      <div className="bg-green-600 h-3 color-red fixed bottom-0 left-0 w-full flex justify-end items-center p-2  font-medium text-xs hover:underline ">
+      <div className="bg-green-600 h-3 color-red fixed bottom-0 left-0 w-full flex justify-end items-center p-2  font-medium text-xs hover:underline max-md:hidden">
         <p> Playin here: Web Player (Chrome)</p>
       </div>
     </div>
